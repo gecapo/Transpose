@@ -2,7 +2,9 @@
   <div id="app">
     <header></header>
     <PWAPrompt />
-    <!-- <LiquidConverter /> -->
+    <nav>
+      <SimpleRouter />
+    </nav>
     <footer>
       <div class="container">Made by @gecapo</div>
     </footer>
@@ -10,15 +12,11 @@
 </template>
 
 <script>
-import PWAPrompt from "./components/PWAPrompt.vue";
-// import LiquidConverter from "./components/LiquidConverter.vue";
+import SimpleRouter from "@/components/SimpleRouter";
 
 export default {
   name: "App",
-  components: {
-    PWAPrompt,
-    // LiquidConverter,
-  },
+  components: { SimpleRouter },
 };
 </script>
 

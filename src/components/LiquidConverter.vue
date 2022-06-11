@@ -1,7 +1,7 @@
 <template>
   <div>
+
     <div>
-      <div>
         <div>
           <input v-model="absoluteUnit" type="number" />
         </div>
@@ -11,11 +11,10 @@
             {{ unit.title }}
           </option>
         </select>
-      </div>
+
     </div>
 
     <div v-for="unit in filteredUnits" class="card" :key="unit.title">
-      <div>
         <span
           class="number"
           v-html="format((absoluteUnit * unitOfMeasurement) / unit.value)"
@@ -28,15 +27,18 @@
             >*</sup
           >
         </span>
-      </div>
     </div>
 
-    <div>* Rounded; not precise</div>
+    <div>
+        * Rounded; not precise
+    </div>
+
   </div>
 </template>
 
 <script>
 import frac from "frac";
+
 export default {
   name: "LiquidConverter",
   data: () => ({
@@ -97,12 +99,6 @@ export default {
         return `${numerator} / ${denominator}`;
       }
       return parseInt(num) === num ? num : num.toString().substring(0, 10);
-    },
-    increment() {
-      this.absoluteUnit += 1;
-    },
-    decrement() {
-      this.absoluteUnit -= 1;
     },
     decimalToFraction(_decimal) {
       if (_decimal == 1) {
