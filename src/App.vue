@@ -1,8 +1,7 @@
 <template>
   <div>
-    <header>
-
-    </header>
+    <header></header>
+    <PWAPrompt />
     <footer>
       <div class="container">Made by @gecapo</div>
     </footer>
@@ -10,10 +9,12 @@
 </template>
 
 <script>
+import PWAPrompt from "./components/PWAPrompt.vue";
 
 export default {
   name: "App",
   components: {
+    PWAPrompt,
   },
 };
 </script>
